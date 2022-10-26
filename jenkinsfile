@@ -1,34 +1,12 @@
 pipeline{
     agent{
-        label "any"
+        label 'any'
     }
     stages{
-        stage("A"){
-            steps{
-                echo "========executing A========"
-            }
-            post{
-                always{
-                    echo "========always========"
-                }
-                success{
-                    echo "========A executed successfully========"
-                }
-                failure{
-                    echo "========A execution failed========"
-                }
-            }
+        stage('Git checkout'){
+            git branch: 'main', url: 'https://github.com/farruwasiq/scm.git'
         }
+        
     }
-    post{
-        always{
-            echo "========always========"
-        }
-        success{
-            echo "========pipeline executed successfully ========"
-        }
-        failure{
-            echo "========pipeline execution failed========"
-        }
-    }
+    
 }
