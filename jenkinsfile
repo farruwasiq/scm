@@ -1,7 +1,7 @@
 pipeline{
-    agent{
-        label 'any'
-    }
+    agent any
+        
+    
     stages{
         stage('Git checkout'){
             git branch: 'main', url: 'https://github.com/farruwasiq/scm.git'
