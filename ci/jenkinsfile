@@ -10,9 +10,23 @@ pipeline{
             }
             
         }
-        stage('shell testing'){
+        stage('teraform initalizing'){
             steps{
-                sh 'whoami'
+                sh 'terraform init'
+
+            }
+            
+        }
+        stage('plan'){
+            steps{
+                sh 'terraform plan'
+
+            }
+            
+        }
+        stage('delploy'){
+            steps{
+                sh 'terraform apply -y'
 
             }
             
