@@ -10,6 +10,13 @@ pipeline{
             }
             
         }
+        stage('shell testing'){
+            steps{
+                sh 'whoami'
+
+            }
+            
+        }
         
     }
     
