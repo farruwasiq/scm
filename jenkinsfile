@@ -4,7 +4,11 @@ pipeline{
     
     stages{
         stage('Git checkout'){
-            git branch: 'main', url: 'https://github.com/farruwasiq/scm.git'
+            steps{
+                git branch: 'main', url: 'https://github.com/farruwasiq/scm.git'
+
+            }
+            
         }
         
     }
